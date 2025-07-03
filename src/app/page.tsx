@@ -47,7 +47,7 @@ export default function Home() {
               </Link>
             </Button>
             <Button asChild size="lg" className="bg-black text-white border border-white hover:bg-white hover:text-black">
-              <Link href="#ai-assistant">
+              <Link href="/#ai-assistant">
                 Solicitar soporte
               </Link>
             </Button>
@@ -115,33 +115,39 @@ export default function Home() {
             Recomendaciones y Soluciones Técnicas
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Image src="https://placehold.co/100x100.png" data-ai-hint="glowing lightbulb" alt="Tips" width={60} height={60} className="rounded-lg"/>
-                <div>
-                  <CardTitle>Tips Prácticos</CardTitle>
-                  <p className="text-sm text-muted-foreground">Mantenga su software actualizado.</p>
-                </div>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Image src="https://placehold.co/100x100.png" data-ai-hint="data backup" alt="Best Practices" width={60} height={60} className="rounded-lg"/>
-                <div>
-                  <CardTitle>Mejores Prácticas</CardTitle>
-                  <p className="text-sm text-muted-foreground">Realice copias de seguridad regularmente.</p>
-                </div>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                 <Image src="https://placehold.co/100x100.png" data-ai-hint="maintenance checklist" alt="Guides" width={60} height={60} className="rounded-lg"/>
-                 <div>
-                  <CardTitle>Guías de Mantenimiento</CardTitle>
-                  <p className="text-sm text-muted-foreground">Consulte nuestras guías paso a paso.</p>
-                </div>
-              </CardHeader>
-            </Card>
+            <Link href="/recommendations/tips" className="group">
+              <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <Image src="https://placehold.co/100x100.png" data-ai-hint="glowing lightbulb" alt="Tips" width={60} height={60} className="rounded-lg"/>
+                  <div>
+                    <CardTitle>Tips Prácticos</CardTitle>
+                    <p className="text-sm text-muted-foreground">Mantenga su software actualizado.</p>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/recommendations/best-practices" className="group">
+              <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <Image src="https://placehold.co/100x100.png" data-ai-hint="data backup" alt="Best Practices" width={60} height={60} className="rounded-lg"/>
+                  <div>
+                    <CardTitle>Mejores Prácticas</CardTitle>
+                    <p className="text-sm text-muted-foreground">Realice copias de seguridad regularmente.</p>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/recommendations/guides" className="group">
+              <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
+                <CardHeader className="flex flex-row items-center gap-4">
+                   <Image src="https://placehold.co/100x100.png" data-ai-hint="maintenance checklist" alt="Guides" width={60} height={60} className="rounded-lg"/>
+                   <div>
+                    <CardTitle>Guías de Mantenimiento</CardTitle>
+                    <p className="text-sm text-muted-foreground">Consulte nuestras guías paso a paso.</p>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
