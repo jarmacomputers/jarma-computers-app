@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Cpu, Wrench, BarChart3, HardHat, FileText, Phone, Star, MapPin, Network, Printer } from 'lucide-react';
+import { ArrowRight, Cpu, Wrench, BarChart3, HardHat, FileText, Phone, Star, MapPin, Network, Printer, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -247,10 +247,26 @@ export default function Home() {
             </div>
              <div className="relative rounded-lg overflow-hidden">
                 <Image src="https://placehold.co/600x400.png" data-ai-hint="city map" alt="Map" fill className="object-cover"/>
-                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <div className="text-center text-white bg-black/50 p-6 rounded-lg">
-                      <MapPin className="h-10 w-10 mx-auto mb-2"/>
-                      <h3 className="font-bold text-xl">Encuentra nuestra ubicación</h3>
+                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-4">
+                    <div className="text-center text-white bg-black/50 p-6 rounded-lg space-y-4">
+                       <div>
+                        <MapPin className="h-10 w-10 mx-auto mb-2"/>
+                        <h3 className="font-bold text-xl">Ponte en Contacto</h3>
+                      </div>
+                      <div className="space-y-2 text-sm md:text-base">
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="h-5 w-5" />
+                          <a href="https://wa.me/51931378930" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            +51 931 378 930
+                          </a>
+                        </div>
+                        <div className="flex items-center justify-center gap-2">
+                          <Globe className="h-5 w-5" />
+                          <a href="https://www.jarmacomputers.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            www.jarmacomputers.com
+                          </a>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
