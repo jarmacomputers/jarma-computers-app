@@ -37,7 +37,7 @@ export function Header() {
     { title: "Inicio", href: "/", icon: Home },
     { title: "Servicios", href: "#services", icon: Wrench },
     { title: "Soluciones", href: "#recommendations", icon: HardHat },
-    { title: "Data IA", href: "#ai-assistant", icon: BarChart3 },
+    { title: "Help Desk IA", href: "#ai-assistant", icon: BarChart3 },
     { title: "Blog", href: "#blog", icon: FileText },
     { title: "Contacto", href: "#contact", icon: Phone },
   ];
