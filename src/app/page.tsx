@@ -36,7 +36,7 @@ export default function Home() {
             Soporte Tecnológico Confiable, Aplicando Estándares ITIL.
           </h1>
           <p className="max-w-[600px] text-lg md:text-xl">
-            JarmaComputers ofrece soluciones expertas para todas tus necesidades de hardware, software, firmware, redes cat-6 y agentes de IA.
+            JarmaComputers ofrece soluciones expertas en Hardware, Software, Firmware, Redes Cat-6, Ciencia de Datos y Agentes de IA.
           </p>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <Button asChild size="lg" variant="secondary">
