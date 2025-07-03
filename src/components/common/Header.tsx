@@ -36,7 +36,7 @@ export function Header() {
 
   const mainNavLinks = [
     { title: "Home", href: "/" },
-    { title: "Recommendations", href: "#" },
+    { title: "DATA - AI", href: "#" },
     { title: "Blog", href: "#" },
     { title: "Contact", href: "#" },
   ];
