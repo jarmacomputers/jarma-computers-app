@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Cpu, LogOut, Menu, UserCircle, X, Home, Wrench, HardHat, BarChart3, FileText, Phone } from "lucide-react";
+import { Cpu, LogOut, Menu, UserCircle, X, Wrench, HardHat, BarChart3, FileText, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -34,12 +34,12 @@ export function Header() {
   };
 
   const mainNavLinks = [
-    { title: "Inicio", href: "/", icon: Home },
-    { title: "Servicios", href: "#services", icon: Wrench },
-    { title: "Soluciones", href: "#recommendations", icon: HardHat },
-    { title: "Help Desk IA", href: "#ai-assistant", icon: BarChart3 },
-    { title: "Blog", href: "#blog", icon: FileText },
-    { title: "Contacto", href: "#contact", icon: Phone },
+    { title: "Inicio", href: "/", icon: Cpu },
+    { title: "Servicios", href: "/#services", icon: Wrench },
+    { title: "Soluciones", href: "/#recommendations", icon: HardHat },
+    { title: "Help Desk IA", href: "/#ai-assistant", icon: BarChart3 },
+    { title: "Blog", href: "/#blog", icon: FileText },
+    { title: "Contacto", href: "/#contact", icon: Phone },
   ];
   
   const renderNavLinks = (isMobile = false) => (
