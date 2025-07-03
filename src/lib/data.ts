@@ -242,6 +242,7 @@ export const blogPosts: BlogPost[] = [
     dataAiHint: 'ai chip',
     source: 'TechDaily',
     category: 'Inteligencia Artificial',
+    content: 'La inteligencia artificial (IA) está avanzando a un ritmo vertiginoso, transformando industrias y redefiniendo lo que es posible. Desde modelos de lenguaje más potentes hasta nuevas aplicaciones en la ciencia y la medicina, exploramos las últimas innovaciones que están dando forma a nuestro futuro.',
   },
   {
     slug: 'tendencias-en-tecnologia',
@@ -250,5 +251,6 @@ export const blogPosts: BlogPost[] = [
     dataAiHint: 'google search phone',
     source: 'InnovateToday',
     category: 'Tecnología',
+    content: 'El panorama tecnológico está en constante evolución. Este artículo cubre las tendencias más importantes a seguir, incluyendo el auge de la computación cuántica, la expansión del Internet de las Cosas (IoT) y el impacto de la tecnología 5G en nuestra vida cotidiana. Manténgase a la vanguardia con nuestro análisis en profundidad.',
   },
 ];

@@ -40,4 +40,5 @@ export interface BlogPost {
   dataAiHint: string;
   source: string;
   category: string;
+  content: string;
 }

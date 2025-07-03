@@ -159,7 +159,7 @@ export default function Home() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {blogPosts.map(post => (
-              <Link href="#" key={post.slug}>
+              <Link href={`/blog/${post.slug}`} key={post.slug}>
                 <Card className="overflow-hidden h-full group">
                   <div className="relative h-48">
                     <Image src={post.image} data-ai-hint={post.dataAiHint} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform" />
