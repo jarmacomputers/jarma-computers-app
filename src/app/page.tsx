@@ -33,10 +33,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative container px-4 md:px-6 h-full flex flex-col items-start justify-center text-white space-y-4">
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-            Soporte Tecnológico Confiable, Simplificado.
+            Soporte Tecnológico Confiable, Aplicando Estándares ITIL.
           </h1>
           <p className="max-w-[600px] text-lg md:text-xl">
-            JarmaComputers ofrece soluciones expertas para todas tus necesidades de hardware y software.
+            JarmaComputers ofrece soluciones expertas para todas tus necesidades de hardware, software, firmware, redes cat-6, Ciencia de Datos y Agentes de IA.
           </p>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <Button asChild size="lg" variant="secondary">
