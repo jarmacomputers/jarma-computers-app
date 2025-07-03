@@ -22,7 +22,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   return (
     <div className="container py-12 md:py-16">
       <div className="mb-8">
-        <h1 className="font-headline text-4xl font-bold tracking-tight">{category.name} Issues</h1>
+        <h1 className="font-headline text-4xl font-bold tracking-tight">Casos de {category.name}</h1>
         <p className="mt-2 text-lg text-muted-foreground">{category.description}</p>
       </div>
 
@@ -38,7 +38,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                   <p className="text-sm text-muted-foreground">{issue.description}</p>
                 </CardContent>
                 <div className="p-6 pt-0 flex justify-end items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Details <ArrowRight className="ml-2 h-4 w-4" />
+                  Ver Detalles <ArrowRight className="ml-2 h-4 w-4" />
                 </div>
               </Card>
             </Link>
@@ -46,7 +46,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
         </div>
       ) : (
         <div className="text-center py-16">
-          <p className="text-muted-foreground">No issues found in this category yet.</p>
+          <p className="text-muted-foreground">No se encontraron casos en esta categoría.</p>
         </div>
       )}
     </div>

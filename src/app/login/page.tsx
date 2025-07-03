@@ -11,9 +11,9 @@ export default function LoginPage() {
            <div className="flex justify-center mb-4">
             <Cpu className="h-10 w-10 text-primary" />
           </div>
-          <CardTitle className="font-headline text-2xl">Welcome Back!</CardTitle>
+          <CardTitle className="font-headline text-2xl">¡Bienvenido de nuevo!</CardTitle>
           <CardDescription>
-            Enter your credentials to access your account.
+            Ingresa tus credenciales para acceder a tu cuenta.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -21,12 +21,12 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter className="flex justify-center">
             <p className="text-sm text-muted-foreground">
-              Don't have an account?{" "}
+              ¿No tienes una cuenta?{" "}
               <Link
                 href="/signup"
                 className="font-medium text-primary hover:underline"
               >
-                Sign up
+                Regístrate
               </Link>
             </p>
         </CardFooter>

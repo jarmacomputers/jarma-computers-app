@@ -11,9 +11,9 @@ export default function SignupPage() {
           <div className="flex justify-center mb-4">
             <Cpu className="h-10 w-10 text-primary" />
           </div>
-          <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
+          <CardTitle className="font-headline text-2xl">Crear una Cuenta</CardTitle>
           <CardDescription>
-            Enter your email and password to get started.
+            Ingresa tu correo y contraseña para comenzar.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -21,12 +21,12 @@ export default function SignupPage() {
         </CardContent>
         <CardFooter className="flex justify-center">
             <p className="text-sm text-muted-foreground">
-              Already have an account?{" "}
+              ¿Ya tienes una cuenta?{" "}
               <Link
                 href="/login"
                 className="font-medium text-primary hover:underline"
               >
-                Log in
+                Iniciar sesión
               </Link>
             </p>
         </CardFooter>

@@ -22,10 +22,10 @@ interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const formSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address." }),
+  email: z.string().email({ message: "Por favor, introduce una dirección de correo válida." }),
   password: z
     .string()
-    .min(8, { message: "Password must be at least 8 characters long." }),
+    .min(8, { message: "La contraseña debe tener al menos 8 caracteres." }),
 });
 
 type UserFormValue = z.infer<typeof formSchema>;
@@ -57,17 +57,17 @@ export function UserAuthForm({
         await signInWithEmailAndPassword(auth, data.email, data.password);
       }
       toast({
-        title: isSignUp ? "Account created" : "Login successful",
+        title: isSignUp ? "Cuenta creada" : "Inicio de sesión exitoso",
         description: isSignUp
-          ? "Welcome! You have been successfully signed up."
-          : "Welcome back! You are now logged in.",
+          ? "¡Bienvenido! Te has registrado correctamente."
+          : "¡Bienvenido de nuevo! Has iniciado sesión.",
       });
       router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
-        title: "Authentication Error",
-        description: error.message || "An unexpected error occurred.",
+        title: "Error de autenticación",
+        description: error.message || "Ocurrió un error inesperado.",
       });
     } finally {
       setIsLoading(false);
@@ -79,10 +79,10 @@ export function UserAuthForm({
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Correo electrónico</Label>
             <Input
               id="email"
-              placeholder="name@example.com"
+              placeholder="nombre@ejemplo.com"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
@@ -97,7 +97,7 @@ export function UserAuthForm({
             )}
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Contraseña</Label>
             <Input
               id="password"
               placeholder="********"
@@ -117,7 +117,7 @@ export function UserAuthForm({
             {isLoading && (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             )}
-            {isSignUp ? "Sign Up" : "Sign In"}
+            {isSignUp ? "Registrarse" : "Iniciar Sesión"}
           </Button>
         </div>
       </form>

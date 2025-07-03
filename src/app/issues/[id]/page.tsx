@@ -29,7 +29,7 @@ export default function IssuePage({ params }: { params: { id: string } }) {
 
         <div className="space-y-12">
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Diagnostic Steps</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Pasos de Diagnóstico</h2>
             <ul className="space-y-3">
               {issue.diagnostics.map((step, index) => (
                 <li key={index} className="flex items-start">
@@ -41,7 +41,7 @@ export default function IssuePage({ params }: { params: { id: string } }) {
           </section>
 
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Recommendations</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Recomendaciones</h2>
             <ul className="space-y-3">
               {issue.recommendations.map((step, index) => (
                 <li key={index} className="flex items-start">
@@ -53,7 +53,7 @@ export default function IssuePage({ params }: { params: { id: string } }) {
           </section>
 
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Solutions</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Soluciones</h2>
             <ul className="space-y-3">
               {issue.solutions.map((step, index) => (
                 <li key={index} className="flex items-start">

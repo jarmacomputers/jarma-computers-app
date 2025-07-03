@@ -31,8 +31,8 @@ export default function AiAssistant() {
       console.error(error);
       toast({
         variant: 'destructive',
-        title: 'AI Assistant Error',
-        description: 'Failed to get a response. Please try again.',
+        title: 'Error del Asistente de IA',
+        description: 'No se pudo obtener una respuesta. Por favor, inténtalo de nuevo.',
       });
     } finally {
       setIsLoading(false);
@@ -51,8 +51,8 @@ export default function AiAssistant() {
       console.error(error);
       toast({
         variant: 'destructive',
-        title: 'Voice Search Error',
-        description: 'Failed to process audio. Please try again.',
+        title: 'Error en Búsqueda por Voz',
+        description: 'No se pudo procesar el audio. Por favor, inténtalo de nuevo.',
       });
     } finally {
       setIsLoading(false);
@@ -64,7 +64,7 @@ export default function AiAssistant() {
       <CardContent className="p-6">
         <form onSubmit={handleTextSearch} className="flex items-center gap-2">
           <Input
-            placeholder="Describe your computer issue..."
+            placeholder="Describe tu problema informático..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="flex-grow"
@@ -78,7 +78,7 @@ export default function AiAssistant() {
           />
           <Button type="submit" size="icon" disabled={isLoading || isRecording || !query.trim()}>
             {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-            <span className="sr-only">Search</span>
+            <span className="sr-only">Enviar</span>
           </Button>
         </form>
         <div className="mt-6">

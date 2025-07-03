@@ -25,3 +25,19 @@ export interface AiSearchResult {
   summary: string;
   externalSources: string[];
 }
+
+export interface Testimonial {
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  image: string;
+  dataAiHint: string;
+  source: string;
+  category: string;
+}
