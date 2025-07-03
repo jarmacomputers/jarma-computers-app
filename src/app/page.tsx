@@ -16,9 +16,11 @@ export default function Home() {
     firmware: <HardHat className="h-8 w-8 text-primary" />,
     networks: <Network className="h-8 w-8 text-primary" />,
     'printers-plotters': <Printer className="h-8 w-8 text-primary" />,
+    'data-science': <BarChart3 className="h-8 w-8 text-primary" />,
+    'ai-agents': <FileText className="h-8 w-8 text-primary" />,
   };
   
-  const featuredServices = categories.slice(0, 4);
+  const featuredServices = categories.slice(0, 6);
 
   return (
     <div className="flex flex-col">
@@ -60,7 +62,7 @@ export default function Home() {
               Servicios Destacados
             </h2>
           </div>
-          <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredServices.map((service) => (
               <Link href={`/categories/${service.slug}`} key={service.slug} className="group">
                 <Card className="relative h-64 w-full overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg">

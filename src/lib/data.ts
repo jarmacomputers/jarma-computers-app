@@ -26,6 +26,16 @@ export const categories: Category[] = [
     name: 'Impresoras y Plotters',
     description: 'Errores de impresión, conflictos de controladores y fallos de hardware.',
   },
+  {
+    slug: 'data-science',
+    name: 'Ciencia de Datos',
+    description: 'Análisis de datos para la toma de decisiones estratégicas.',
+  },
+  {
+    slug: 'ai-agents',
+    name: 'Agentes de IA',
+    description: 'Desarrollo de agentes de inteligencia artificial personalizados.',
+  },
 ];
 
 export const issues: Issue[] = [
@@ -157,6 +167,48 @@ export const issues: Issue[] = [
     solutions: [
       'Borrar un documento atascado de la cola de impresión y reiniciar el servicio de Cola de impresión es una solución muy común.',
       'Para impresoras de red, asegurarse de que la impresora tenga una dirección IP estable y esté en la misma subred que el ordenador.',
+    ],
+  },
+  // Data Science
+  {
+    id: 'ds001',
+    title: 'Análisis de Datos Incompleto',
+    category: 'data-science',
+    description: 'El análisis no considera todas las variables relevantes, llevando a conclusiones sesgadas.',
+    diagnostics: [
+      'Verificar la fuente de datos.',
+      'Asegurar la calidad e integridad de los datos.',
+      'Validar el modelo de análisis.',
+    ],
+    recommendations: [
+      'Incorporar más fuentes de datos.',
+      'Aplicar técnicas de limpieza de datos.',
+      'Consultar a un experto en el dominio.',
+    ],
+    solutions: [
+      'Un modelo de datos robusto mejora la precisión del análisis.',
+      'La validación cruzada previene el sobreajuste.',
+    ],
+  },
+  // AI Agents
+  {
+    id: 'ai001',
+    title: 'Agente de IA No Responde Correctamente',
+    category: 'ai-agents',
+    description: 'El agente de IA proporciona respuestas irrelevantes o incorrectas a las consultas de los usuarios.',
+    diagnostics: [
+      'Revisar los registros de conversación.',
+      'Analizar los datos de entrenamiento del agente.',
+      'Evaluar la configuración del modelo de lenguaje.',
+    ],
+    recommendations: [
+      'Re-entrenar el modelo con datos más precisos.',
+      'Ajustar los parámetros del modelo.',
+      'Implementar un bucle de retroalimentación del usuario.',
+    ],
+    solutions: [
+      'El fine-tuning del modelo con datos específicos del dominio mejora la relevancia.',
+      'Un sistema de evaluación continua asegura la calidad de las respuestas.',
     ],
   },
 ];
