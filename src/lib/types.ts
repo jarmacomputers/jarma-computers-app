@@ -8,6 +8,7 @@ export interface Category {
   slug: string;
   name: string;
   description: string;
+  image: string;
 }
 
 export interface Issue {
@@ -41,4 +42,5 @@ export interface BlogPost {
   source: string;
   category: string;
   content: string;
+  externalLink?: string;
 }

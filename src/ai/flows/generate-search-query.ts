@@ -1,53 +1,65 @@
-// src/ai/flows/generate-search-query.ts
+
 'use server';
 
-/**
- * @fileOverview AI-powered module that transcribes and understands user spoken queries.
- *
- * - generateSearchQuery - A function that handles the transcription and understanding of voice search queries.
- * - GenerateSearchQueryInput - The input type for the generateSearchQuery function.
- * - GenerateSearchQueryOutput - The return type for the generateSearchQuery function.
- */
+import { z } from 'genkit';
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
+// Esquema de entrada
 const GenerateSearchQueryInputSchema = z.object({
-  audioDataUri: z
-    .string()
-    .describe(
-      "A recorded voice query from the user as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
-    ),
+  audioDataUri: z.string().describe(
+    "A base64 encoded voice query. Format: 'data:<mimetype>;base64,<encoded_data>'"
+  ),
 });
 export type GenerateSearchQueryInput = z.infer<typeof GenerateSearchQueryInputSchema>;
 
+// Esquema de salida
 const GenerateSearchQueryOutputSchema = z.object({
-  transcription: z.string().describe('The transcribed text from the audio data.'),
+  transcription: z.string().describe('The text version of the voice query.'),
 });
 export type GenerateSearchQueryOutput = z.infer<typeof GenerateSearchQueryOutputSchema>;
 
-export async function generateSearchQuery(input: GenerateSearchQueryInput): Promise<GenerateSearchQueryOutput> {
+/**
+ * Función que se ejecuta solo en servidor.
+ * Importa dinámicamente `ai` para evitar que `handlebars` se empaquete en el cliente.
+ */
+export async function generateSearchQuery(
+  input: GenerateSearchQueryInput
+): Promise<GenerateSearchQueryOutput> {
+  if (typeof window !== 'undefined') {
+    throw new Error('generateSearchQuery must be called on the server');
+  }
+
+  // Importación dinámica para evitar warnings de Webpack
+  const { ai } = await import('../../../genkit.config');
+
+  // Prompt definition
+  const generateSearchQueryPrompt = ai.definePrompt({
+    name: 'generateSearchQueryPrompt',
+    input: { schema: GenerateSearchQueryInputSchema },
+    output: { schema: GenerateSearchQueryOutputSchema },
+    prompt: `
+You are a voice-to-text AI assistant.
+
+Convert the following audio (encoded as base64) into a clear technical support query.
+
+Audio:
+{{media url=audioDataUri}}
+    `,
+  });
+
+  // Flow definition con tipado explícito
+  const generateSearchQueryFlow = ai.defineFlow(
+    {
+      name: 'generateSearchQueryFlow',
+      inputSchema: GenerateSearchQueryInputSchema,
+      outputSchema: GenerateSearchQueryOutputSchema,
+    },
+    async (input: GenerateSearchQueryInput) => {
+      const { output } = await generateSearchQueryPrompt(input);
+      return output!;
+    }
+  );
+
   return generateSearchQueryFlow(input);
 }
 
-const prompt = ai.definePrompt({
-  name: 'generateSearchQueryPrompt',
-  input: {schema: GenerateSearchQueryInputSchema},
-  output: {schema: GenerateSearchQueryOutputSchema},
-  prompt: `You are an AI assistant that transcribes user voice queries into text.
 
-  Transcribe the following audio data into text:
-  {{media url=audioDataUri}}`,
-});
-
-const generateSearchQueryFlow = ai.defineFlow(
-  {
-    name: 'generateSearchQueryFlow',
-    inputSchema: GenerateSearchQueryInputSchema,
-    outputSchema: GenerateSearchQueryOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
-  }
-);

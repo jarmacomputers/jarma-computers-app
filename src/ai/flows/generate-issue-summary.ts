@@ -8,7 +8,7 @@
  * - GenerateIssueSummaryOutput - The return type for the generateIssueSummary function.
  */
 
-import {ai} from '@/ai/genkit';
+import {ai} from '../../../genkit.config';
 import {z} from 'genkit';
 
 const GenerateIssueSummaryInputSchema = z.object({

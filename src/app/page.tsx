@@ -26,7 +26,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full h-[60vh] md:h-[70vh]">
         <Image
-          src="https://placehold.co/1600x900.png"
+          src="/jarma.jpg"
           alt="Developer desk"
           data-ai-hint="developer desk"
           fill
@@ -35,10 +35,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative container px-4 md:px-6 h-full flex flex-col items-start justify-center text-white space-y-4">
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-            Soporte Tecnológico Confiable, Aplicando Estándares ITIL.
+            Soporte Informático
           </h1>
           <p className="max-w-[600px] text-lg md:text-xl">
-            JarmaComputers ofrece soluciones expertas en Hardware, Software, Firmware, Redes Cat-6, Ciencia de Datos y Agentes de IA.
+            JarmaComputers ofrece soluciones expertas en Hardware, Software, Firmware, Redes Cat-6, Ciencia de Datos y Agentes IA.
           </p>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <Button asChild size="lg" variant="secondary">
@@ -48,7 +48,7 @@ export default function Home() {
             </Button>
             <Button asChild size="lg" className="bg-black text-white border border-white hover:bg-white hover:text-black">
               <Link href="/#ai-assistant">
-                Solicitar soporte
+                Soporte IA
               </Link>
             </Button>
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
               <Link href={`/categories/${service.slug}`} key={service.slug} className="group">
                 <Card className="relative h-64 w-full overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                   <Image
-                    src={`https://placehold.co/400x400.png`}
+                    src={service.image}
                     data-ai-hint={service.slug.replace('-', ' ')}
                     alt={service.name}
                     fill
@@ -118,7 +118,7 @@ export default function Home() {
             <Link href="/recommendations/tips" className="group">
               <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
                 <CardHeader className="flex flex-row items-center gap-4">
-                  <Image src="https://placehold.co/100x100.png" data-ai-hint="glowing lightbulb" alt="Tips" width={60} height={60} className="rounded-lg"/>
+                  <Image src="/actualizaciones.jpg" data-ai-hint="glowing lightbulb" alt="Tips" width={60} height={60} className="rounded-lg"/>
                   <div>
                     <CardTitle>Tips Prácticos</CardTitle>
                     <p className="text-sm text-muted-foreground">Mantenga su software actualizado.</p>
@@ -129,7 +129,7 @@ export default function Home() {
             <Link href="/recommendations/best-practices" className="group">
               <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
                 <CardHeader className="flex flex-row items-center gap-4">
-                  <Image src="https://placehold.co/100x100.png" data-ai-hint="data backup" alt="Best Practices" width={60} height={60} className="rounded-lg"/>
+                  <Image src="/tecnico.jpg" data-ai-hint="data backup" alt="Best Practices" width={60} height={60} className="rounded-lg"/>
                   <div>
                     <CardTitle>Mejores Prácticas</CardTitle>
                     <p className="text-sm text-muted-foreground">Realice copias de seguridad regularmente.</p>
@@ -140,7 +140,7 @@ export default function Home() {
             <Link href="/recommendations/guides" className="group">
               <Card className="h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-lg">
                 <CardHeader className="flex flex-row items-center gap-4">
-                   <Image src="https://placehold.co/100x100.png" data-ai-hint="maintenance checklist" alt="Guides" width={60} height={60} className="rounded-lg"/>
+                   <Image src="/mainboard.jpg" data-ai-hint="maintenance checklist" alt="Guides" width={60} height={60} className="rounded-lg"/>
                    <div>
                     <CardTitle>Guías de Mantenimiento</CardTitle>
                     <p className="text-sm text-muted-foreground">Consulte nuestras guías paso a paso.</p>

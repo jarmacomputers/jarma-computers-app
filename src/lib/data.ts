@@ -5,36 +5,43 @@ export const categories: Category[] = [
     slug: 'software',
     name: 'Software',
     description: 'Problemas con aplicaciones, sistemas operativos y controladores.',
+    image: '/software.jpg',
   },
   {
     slug: 'hardware',
     name: 'Hardware',
     description: 'Problemas con componentes físicos como CPU, GPU y RAM.',
+    image: '/hardware.jpg'
   },
   {
     slug: 'firmware',
     name: 'Firmware',
     description: 'Configuraciones de BIOS/UEFI y complicaciones en la actualización del firmware.',
+    image: '/firmware.jpg',
   },
   {
     slug: 'networks',
     name: 'Redes',
     description: 'Problemas de conectividad, problemas de Wi-Fi y configuraciones de LAN.',
+    image: '/redes.jpg',
   },
   {
     slug: 'printers-plotters',
     name: 'Impresoras y Plotters',
     description: 'Errores de impresión, conflictos de controladores y fallos de hardware.',
+    image: '/impresora.jpg',
   },
   {
     slug: 'data-science',
     name: 'Ciencia de Datos',
     description: 'Análisis de datos para la toma de decisiones estratégicas.',
+    image: '/cienciadatos.jpg',
   },
   {
     slug: 'ai-agents',
     name: 'Agentes de IA',
     description: 'Desarrollo de agentes de inteligencia artificial personalizados.',
+    image: '/ai.jpg',
   },
 ];
 
@@ -215,20 +222,20 @@ export const issues: Issue[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    name: 'Jose Vazquez',
-    avatar: 'https://placehold.co/100x100.png',
+    name: 'Rava Consulting',
+    avatar: '/rava.jpg',
     rating: 5,
-    comment: 'Excelente servicio y atención. Resolvieron mi problema rápidamente y con mucha profesionalidad. ¡Muy recomendados!',
+    comment: 'Excelente servicio y atención. Resuelven nuestros problemas rápidamente y con mucha profesionalidad. ¡Muy recomendados!',
   },
   {
-    name: 'Maria Garcia',
-    avatar: 'https://placehold.co/100x100.png',
+    name: 'Clinica Dental José Vasquez',
+    avatar: '/dental.jpg',
     rating: 5,
     comment: 'El equipo de JarmaComputers es increíble. Me ayudaron a recuperar datos que creía perdidos. ¡Gracias por todo!',
   },
   {
-    name: 'Carlos Rodriguez',
-    avatar: 'https://placehold.co/100x100.png',
+    name: 'Casa de cambio Tio Rico',
+    avatar: '/money.jpg',
     rating: 4,
     comment: 'Buen servicio técnico. Fueron amables y me explicaron el problema en detalle. El precio fue razonable.',
   },
@@ -238,19 +245,21 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'lo-ultimo-en-ia',
     title: 'Lo Último en IA',
-    image: 'https://placehold.co/600x400.png',
+    image: '/ai.jpg',
     dataAiHint: 'ai chip',
     source: 'TechDaily',
     category: 'Inteligencia Artificial',
     content: 'La inteligencia artificial (IA) está avanzando a un ritmo vertiginoso, transformando industrias y redefiniendo lo que es posible. Desde modelos de lenguaje más potentes hasta nuevas aplicaciones en la ciencia y la medicina, exploramos las últimas innovaciones que están dando forma a nuestro futuro.',
+    externalLink: 'https://es.wired.com/tag/inteligencia-artificial',
   },
   {
     slug: 'tendencias-en-tecnologia',
     title: 'Tendencias en tecnología',
-    image: 'https://placehold.co/600x400.png',
+    image: '/tendencias.jpg',
     dataAiHint: 'google search phone',
     source: 'InnovateToday',
     category: 'Tecnología',
     content: 'El panorama tecnológico está en constante evolución. Este artículo cubre las tendencias más importantes a seguir, incluyendo el auge de la computación cuántica, la expansión del Internet de las Cosas (IoT) y el impacto de la tecnología 5G en nuestra vida cotidiana. Manténgase a la vanguardia con nuestro análisis en profundidad.',
+    externalLink: 'https://technologyreview.es/',
   },
 ];

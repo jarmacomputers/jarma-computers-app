@@ -10,8 +10,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -28,7 +34,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <h1 className="font-headline text-4xl font-bold tracking-tight">{post.title}</h1>
             <p className="mt-4 text-lg text-muted-foreground">Fuente: {post.source}</p>
           </header>
-          
+
           <div className="relative w-full h-96 mb-8">
             <Image
               src={post.image}
@@ -41,9 +47,24 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           <div className="space-y-6 text-lg text-foreground/90 leading-relaxed">
             <p>{post.content}</p>
-            <p className="text-sm text-muted-foreground italic">Este es un contenido de ejemplo. En una aplicación real, aquí se mostraría el cuerpo completo del artículo del blog, que podría obtenerse de un sistema de gestión de contenidos (CMS) o una API.</p>
+            <p className="text-sm text-muted-foreground italic">
+              Hacer click en el siguiente enlace para mayor información.
+            </p>
+
+            {post.externalLink && (
+              <div className="mt-6 text-center">
+                <a
+                  href={post.externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-semibold"
+                >
+                  Leer más en {new URL(post.externalLink).hostname}
+                </a>
+              </div>
+            )}
           </div>
-          
+
           <div className="mt-12 text-center">
             <Link href="/#blog" className="text-primary hover:underline font-medium">
               &larr; Volver al Blog

@@ -10,8 +10,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function IssuePage({ params }: { params: { id: string } }) {
-  const issue = issues.find((i) => i.id === params.id);
+export default async function IssuePage({ params }: { params: Promise<{ id: string }> }) {
+  // Esperar a que params esté disponible
+  const { id } = await params;
+
+  const issue = issues.find((i) => i.id === id);
   if (!issue) {
     notFound();
   }
@@ -21,15 +24,26 @@ export default function IssuePage({ params }: { params: { id: string } }) {
       <div className="mx-auto max-w-3xl">
         <div className="mb-8">
           <Link href={`/categories/${issue.category}`}>
-            <Badge variant="secondary" className="mb-2 hover:bg-accent transition-colors capitalize">{issue.category.replace('-', ' ')}</Badge>
+            <Badge
+              variant="secondary"
+              className="mb-2 hover:bg-accent transition-colors capitalize"
+            >
+              {issue.category.replace('-', ' ')}
+            </Badge>
           </Link>
-          <h1 className="font-headline text-4xl font-bold tracking-tight">{issue.title}</h1>
-          <p className="mt-4 text-lg text-muted-foreground">{issue.description}</p>
+          <h1 className="font-headline text-4xl font-bold tracking-tight">
+            {issue.title}
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {issue.description}
+          </p>
         </div>
 
         <div className="space-y-12">
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Pasos de Diagnóstico</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">
+              Pasos de Diagnóstico
+            </h2>
             <ul className="space-y-3">
               {issue.diagnostics.map((step, index) => (
                 <li key={index} className="flex items-start">
@@ -41,7 +55,9 @@ export default function IssuePage({ params }: { params: { id: string } }) {
           </section>
 
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Recomendaciones</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">
+              Recomendaciones
+            </h2>
             <ul className="space-y-3">
               {issue.recommendations.map((step, index) => (
                 <li key={index} className="flex items-start">
@@ -53,11 +69,13 @@ export default function IssuePage({ params }: { params: { id: string } }) {
           </section>
 
           <section>
-            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">Soluciones</h2>
+            <h2 className="font-headline text-2xl font-semibold mb-4 border-b pb-2">
+              Soluciones
+            </h2>
             <ul className="space-y-3">
               {issue.solutions.map((step, index) => (
                 <li key={index} className="flex items-start">
-                   <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-1 shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-1 shrink-0" />
                   <span>{step}</span>
                 </li>
               ))}
@@ -68,3 +86,4 @@ export default function IssuePage({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
